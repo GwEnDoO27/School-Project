@@ -1,0 +1,142 @@
+using namespace std;
+
+extern int createDb(const char *s);
+extern int createTable(const char *s);
+extern int insertData(const char *s);
+extern int updatedata(const char *s);
+extern int selectData(const char *s);
+extern int callback(void *NotUsed, int argc, char **azColName);
+
+const char *dir = "/Users/gwendal/Desktop/Atm-management/Database";
+
+static int createDb(const char *s)
+{
+    sqlite3 *DB;
+    int exit = 0;
+
+    exit = sqlite3_open(s, &DB);
+    sqlite3_close(DB);
+
+    return 0;
+}
+
+static int createTable(const char *s)
+{
+    sqlite3 *DB;
+
+    string sql = "CREATE TABLE IF NOT EXIST USER("
+                 "ID INTEGRER PRYMARY KEY AUTOINCREMENT"
+                 "USER       CHAR(50), "
+                 "PASSWORD   CHAR(50), "
+                 ");";
+
+    try
+    {
+        int exit = 0 exit sqlite3_open(s, &DB);
+
+        char *messageError;
+        exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+        if (exit != SQLITE_OK)
+        {
+            cerr << "Error Create Table" << endl;
+            sqlite3_free(messageError);
+        }
+        else
+            cout << "Table created Sucessfully" << endl;
+        sqlite3_close(DB);
+    }
+    catch (const exception &e)
+    {
+        cerr << e.what();
+    }
+    return 0;
+}
+static int insertData(const char *s)
+{
+    sqlite3 *DB;
+    char *messageError;
+
+    int exit = sqlite3_open(s, &DB);
+
+    string sql("INSERT INTO USER( USER, PASSWORD)");
+
+    exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+    if (exit != SQLITE_OK)
+    {
+        cerr << "Error Insert" << endl;
+        sqlite3_free(messageError);
+    }
+    else
+        cout << "Records created Successfully!" << endl;
+    return 0
+}
+
+static int selectData(const char *s)
+{
+    sqlite3 *DB;
+
+    int exit = sqlite3_open(s, &DB);
+
+    string sql = "SELECT * FROM USER;";
+
+    sqlite3_exec(DB, sql.c_str(), callback, NULL, NULL);
+
+    return 0;
+}
+
+static int callback(void *NotUsed, int argc, char **azColName)
+{
+    for (int i = 0; i < argc, i++)
+    {
+        cout << azColName[i] << ": " << argv[i] << end;
+    }
+    cout << endl;
+
+    return 0;
+}
+
+static int updatedata(const char *s)
+{
+    sqlite3 *DB;
+    char *messageError;
+
+    int exit = sqlite3_open(s, &DB);
+
+    string sql("UPDATE USER ");
+
+    exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+    if (exit != SQLITE_OK)
+    {
+        cerr << "Error Insert" << endl;
+        sqlite3_free(messageError);
+    }
+    else
+        cout << "Records created Sucessfully" << endl;
+
+    return 0;
+}
+
+
+/* void CreateRecordDB()
+{
+    sqlite3 *db;
+    int rc = sqlite3_open(DB_FIle, &db);
+    if (rc != SQLITE_OK)
+    {
+        fprintf(stderr, "Cannot open or create the database: %s\n", sqlite3_errmsg(db));
+        sqlite3_close(db);
+        exit(1);
+    }
+    const char *createTableSQL = "CREATE TABLE IF NOT EXISTS records (id INTEGER PRIMARY KEY, account INTEGER, name TEXT, date_of_creation BLOB, country TEXT, phone INTEGER, balance REAL, type_of_account TEXT);";
+    rc = sqlite3_exec(db, createTableSQL, NULL, 0, NULL);
+    if (rc != SQLITE_OK)
+    {
+        fprintf(stderr, "Failed to create table: %s\n", sqlite3_errmsg(db));
+        sqlite3_close(db);
+        exit(1);
+    }
+
+    printf("Database created successfully!\n");
+    sqlite3_close(db);
+} */
