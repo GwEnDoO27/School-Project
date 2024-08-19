@@ -1,0 +1,196 @@
+@import url(https://db.onlinewebfonts.com/c/4c19fc875e7ba1e6831129de3ab5ac0b?family=Retro+Gaming);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #3ABEF9;
+}
+
+body {
+
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    cursor: crosshair
+
+}
+
+.container {
+    background-image: url("asset/stage.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.grass {
+    background-image: url("asset/CleanStage.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    height: 50%;
+    position: relative;
+    top: 60vh;
+    z-index: 1000;
+}
+
+.blood {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+
+}
+
+.blood {
+    z-index: 1;
+    display: none;
+}
+
+#score {
+    font-family: "Retro Gaming";
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1002;
+    color: white;
+}
+
+#NewWaveText{
+    font-family: "Retro Gaming";
+    font-size: 50px;
+    justify-content: center;
+    color: white;
+}
+
+#bullet {
+    font-family: "Retro Gaming";
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1002;
+    color: white;
+}
+
+#fps {
+    font-family: "Retro Gaming";
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    z-index: 1002;
+    color: white;
+}
+
+#timer {
+    font-family: "Retro Gaming";
+    font-size: 20px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 1002;
+    color: white;
+}
+
+#Life {
+    font-family: "Retro Gaming";
+    font-size: 20px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    z-index: 1002;
+    color: white;
+}
+
+.duck {
+    z-index: 0;
+}
+
+button.btn {
+    font-family: "Retro Gaming";
+    padding: 20px;
+    font-size: 35px;
+    border-radius: 20px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.startMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1003;
+}
+
+
+.gameover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1003;
+}
+
+
+.gameovermenuContent {
+    background: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.menuContent {
+    background: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.retryBtn {
+    font-family: "Retro Gaming";
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.resumeBtn {
+    font-family: "Retro Gaming";
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.restartBtn {
+    font-family: "Retro Gaming";
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+h1 {
+    font-family: "Retro Gaming";
+}
