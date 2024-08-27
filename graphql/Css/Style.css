@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    hyphens: auto;
+}
+
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgb(221, 221, 221);
+    background-image: url(../Images/01-trame.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    display: inline-block;
+    text-align: left;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: hsl(0, 0%, 60%);
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    color: hsl(0, 0%, 75%);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: none;
+    border-bottom: solid 1px hsl(0, 0%, 50%);
+    font-weight: 100;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+*:focus {
+    outline: none;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    user-select: none;
+
+}
+
+#loginButton:hover {
+    background-color: blue;
+}
+
+.logout {
+    cursor: pointer;
+}
