@@ -12,9 +12,8 @@ And log in whith your credentials
 
 ## Images
 
-![alt text](https://github.com/GwEnDoO27/graphql/blob/main/login.png?raw=true)
-
-![screenshot](Login.png)
+![alt text](Login.png)
+![alt text](Home.png)
 
 
 ## Authors
