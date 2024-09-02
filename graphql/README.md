@@ -12,8 +12,8 @@ And log in whith your credentials
 
 ## Images
 
-![alt text](Login.png)
-![alt text](Home.png)
+![alt text](./Images/Login.png)
+![alt text](./Images/Home.png)
 
 
 ## Authors
